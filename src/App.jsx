@@ -67,7 +67,7 @@ import React, { /* Component,  */ useState } from "react"
 		)
 	}
 } */
-
+// 组件传值
 function Child(props) {
 	return (
 		<>

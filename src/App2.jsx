@@ -1,5 +1,5 @@
 import React, { useState, useReducer } from "react"
-
+//useState useReducer
 export default function App2() {
 	const initialText = "higher~oh~higher"
 	const [text, setText] = useReducer(changeText, initialText)
