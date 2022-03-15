@@ -1,12 +1,12 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import App from "./App5.jsx"
-import { Provider } from "react-redux"
-import store from "./store"
+import Router from "./router/index.jsx"
+/* import App from "./App6.jsx" */
+/* import { Provider } from "react-redux"
+import store from "./store" */
 
 ReactDOM.render(
-	<Provider store={store}>
-		<App />
-	</Provider>,
+	<Router />,
+
 	document.getElementById("root")
 )
