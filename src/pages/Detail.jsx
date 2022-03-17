@@ -1,8 +1,28 @@
 import React from "react"
-import { useParams } from "react-router-dom"
+import { connect } from "react-redux"
+import { Link, useParams } from "react-router-dom"
 
-export default function Detail() {
+function Detail(props) {
 	const { id } = useParams()
-	console.log(id)
-	return <div>Detail</div>
+	const [item] = props.goods.filter((i) => i.id === Number(id))
+	return item ? (
+		<div>
+			<p>商品名称：{item.name}</p>
+			<p>商品单价：{item.price}</p>
+			<p>商品详情：{item.desc}</p>
+			<Link to="/home">Back to Home</Link>
+		</div>
+	) : (
+		<div>
+			<p>该商品已下架</p>
+			<Link to="/home">Back to Home</Link>
+		</div>
+	)
 }
+const storeState = (state) => {
+	return {
+		goods: state.goods,
+	}
+}
+
+export default connect(storeState)(Detail)

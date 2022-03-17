@@ -1,18 +1,16 @@
 import React from "react"
-import { useNavigate } from "react-router-dom"
-
+import List from "./List"
+import { Provider } from "react-redux"
+import store from "../store"
+import "../assets/css/home.css"
 export default function Home() {
-	const navigate = useNavigate()
-	const changeRouter = (name) => {
-		if (name === "list") {
-			navigate("/list", { state: { id: 123 } })
-		} else navigate("/detail/456")
-	}
 	return (
 		<>
 			<p>Home</p>
-			<button onClick={() => changeRouter("list")}>to List</button>
-			<button onClick={() => changeRouter("detail")}>to Detail</button>
+			<p>List:</p>
+			<Provider store={store}>
+				<List />
+			</Provider>
 		</>
 	)
 }

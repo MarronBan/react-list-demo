@@ -1,8 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import App from "../App6"
-import Detail from "../pages/Detail"
+import App from "../App"
 import Home from "../pages/Home"
-import List from "../pages/List"
+import Detail from "../pages/Detail"
 import Error from "../pages/Error"
 const BaseRouter = () => {
 	return (
@@ -10,9 +9,8 @@ const BaseRouter = () => {
 			<Routes>
 				<Route path="/" element={<App />}>
 					<Route path="/home" element={<Home />}></Route>
+					<Route path="/detail/:id" element={<Detail />}></Route>
 				</Route>
-				<Route path="/list" element={<List />}></Route>
-				<Route path="/detail/:id" element={<Detail />}></Route>
 				<Route path="*" element={<Error />}></Route>
 			</Routes>
 		</BrowserRouter>
